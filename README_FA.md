@@ -1,8 +1,16 @@
 # GooseRelayVPN
 
-[![GitHub](https://img.shields.io/badge/GitHub-GooseRelayVPN-blue?logo=github)](https://github.com/kianmhz/GooseRelayVPN)
+
 
 **[English README](README.md)**
+
+
+
+
+
+
+در صورت هرگونه مشکل با ایدیه زیر ارتباط بگیرید: 
+https://t.me/whoisdoujz9q7
 
 یک VPN مبتنی بر SOCKS5 که **ترافیک خام TCP** را از طریق یک وب اپ Google Apps Script به سرور خروجی VPS کوچک خودتان تونل می‌کند. هر چیزی که در مسیر شبکه قرار دارد فقط TLS به یک IP گوگل با `SNI=www.google.com` می‌بیند. همه چیز در مسیر به‌صورت سرتاسری با AES-256-GCM رمز می‌شود — گوگل هرگز متن خام را نمی‌بیند و کلید را نگه نمی‌دارد.
 
@@ -14,22 +22,14 @@
 
 اگر این پروژه را دوست دارید، لطفاً با ستاره دادن در GitHub (⭐) از آن حمایت کنید. این کار باعث دیده شدن پروژه می‌شود.
 
-اگر تمایل دارید، می‌توانید به صورت مالی هم حمایت کنید:
-
-- TRX / USDT TRC20:
-  `TSxg2WAXYnkoR2UiUTzCxbmqNARAt91aqB`
-- BNB / USDT BEP20:
-  `0xe7b48d8fd5fbbb4e3fa9a06723a62a88585139ea`
-- TON:
-  `UQDBzJqzJ5e7uZFPrmarTRSGGbD1UoFK2q5_jWh4D2nnNdUB`
 
 ## نکات مهم
 
 - هرگز `tunnel_key` را با کسی به اشتراک نگذارید. هر کسی این کلید را داشته باشد می‌تواند مثل شما از تونل/VPS استفاده کند.
 - داشتن یک سرور با دسترسی اینترنت عمومی الزامی است. سرور خروجی باید از سمت Google Apps Script قابل دسترسی باشد.
 - هر Deployment ID در Google Apps Script حدود ۲۰٬۰۰۰ اجرا در روز سهمیه دارد و این سهمیه حدود ساعت ۱۰:۳۰ صبح به وقت ایران (GMT+3:30) ریست می‌شود.
-- در این پروژه نیازی به نصب گواهی MITM محلی ندارید. تنظیمات گواهی در `MasterHttpRelayVPN` مخصوص معماری همان پروژه است و اینجا لازم نیست.
-- این پروژه از ایده مخزن اصلی الهام گرفته است: https://github.com/masterking32/MasterHttpRelayVPN
+- در این پروژه نیازی به نصب گواهی MITM محلی ندارید. تنظیمات گواهی در `MasterHttpRelayVPN` مخصوصمعماری همان پروژه است و اینجا لازم نیست.
+- این پروژه از ایده مخزن اصلی الهام گرفته است: https://github.com/T2HASH/MasterHttpRelayVPN
 
 ---
 
@@ -78,15 +78,15 @@ Browser/App
 
 1. به [صفحه Releases](https://github.com/kianmhz/GooseRelayVPN/releases) بروید.
 2. آرشیو مناسب سیستم‌عامل خود را دانلود کنید:
-   - Windows: `GooseRelayVPN-client-vX.Y.Z-windows-amd64.zip`
-   - macOS (Intel): `GooseRelayVPN-client-vX.Y.Z-darwin-amd64.tar.gz`
-   - macOS (M1/M2/M3): `GooseRelayVPN-client-vX.Y.Z-darwin-arm64.tar.gz`
-   - Linux: `GooseRelayVPN-client-vX.Y.Z-linux-amd64.tar.gz`
-   - Android / Termux (arm64): `GooseRelayVPN-client-vX.Y.Z-android-arm64.tar.gz`
+   - Windows: `GooseRelayVpN-client-vX.Y.Z-windows-amd64.zip`
+   - macOS (Intel): `GooseRelayVpN-client-vX.Y.Z-darwin-amd64.tar.gz`
+   - macOS (M1/M2/M3): `GooseRelayVpN-client-vX.Y.Z-darwin-arm64.tar.gz`
+   - Linux: `GooseRelayVpN-client-vX.Y.Z-linux-amd64.tar.gz`
+   - Android / Termux (arm64): `GooseRelayVpN-client-vX.Y.Z-android-arm64.tar.gz`
 3. برای **سرور**، باینری مناسب سیستم‌عامل VPS خود را دانلود کنید:
    - **لینوکس (رایج‌ترین):**
      ```bash
-     wget https://github.com/kianmhz/GooseRelayVPN/releases/latest/download/GooseRelayVPN-server-vX.Y.Z-linux-amd64.tar.gz
+     wget https://github.com/T2HASH/gooserelayVpN/releases/latest/download/gooserelayVpN-server-vX.Y.Z-linux-amd64.tar.gz
      tar -xzf GooseRelayVPN-server-vX.Y.Z-linux-amd64.tar.gz
      ```
    - **ویندوز سرور:** فایل `GooseRelayVPN-server-vX.Y.Z-windows-amd64.zip` را از صفحه Releases دانلود کنید و آن را در پوشه‌ای مثل `C:\goose-relay\` اکسترکت کنید. برای راه‌اندازی سرویس، مرحله ۸ (ویندوز) را ببینید.
@@ -573,9 +573,7 @@ harness نتایج working tree شما را با baseline ذخیره‌شده د
 bash bench/bench.sh --update <ref>   # مثلاً --update v1.3.0 یا --update HEAD
 ```
 
----
-
-## Special Thanks
+s
 
 Special thanks to [@abolix](https://github.com/abolix) for making this project possible.
 
