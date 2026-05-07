@@ -1,6 +1,6 @@
-# GooseRelayVPN
+# GooseRelayVpN
 
-[![GitHub](https://img.shields.io/badge/GitHub-GooseRelayVPN-blue?logo=github)](https://github.com/kianmhz/GooseRelayVPN)
+[![GitHub](https://github.com/T2HASH/gooserelayVpN)
 
 **[🇮🇷 راهنمای فارسی (Persian)](README_FA.md)**
 
@@ -14,14 +14,7 @@ A SOCKS5 VPN that tunnels **raw TCP** through a Google Apps Script web app to yo
 
 If you like this project, please consider starring it on GitHub (⭐). It helps the project get discovered.
 
-You can also support the project financially:
 
-- TRX / USDT TRC20:
-  `TSxg2WAXYnkoR2UiUTzCxbmqNARAt91aqB`
-- BNB / USDT BEP20:
-  `0xe7b48d8fd5fbbb4e3fa9a06723a62a88585139ea`
-- TON:
-  `UQDBzJqzJ5e7uZFPrmarTRSGGbD1UoFK2q5_jWh4D2nnNdUB`
 
 ## Important Notes
 
@@ -76,7 +69,7 @@ You need two separate programs:
 
 **Option A — Download a pre-built release (recommended):**
 
-1. Go to the [Releases page](https://github.com/kianmhz/GooseRelayVPN/releases).
+1. Go to the [Releases page](https://github.com/T2HASH/gooserelayVpN/releases/tag/v1.6.0).
 2. Download the right archive for your OS:
    - Windows: `GooseRelayVPN-client-vX.Y.Z-windows-amd64.zip`
    - macOS (Intel): `GooseRelayVPN-client-vX.Y.Z-darwin-amd64.tar.gz`
@@ -104,7 +97,7 @@ You need two separate programs:
 **Option B — Build from source (Go 1.22+) — not recommended, may be unstable:**
 
 ```bash
-git clone https://github.com/kianmhz/GooseRelayVPN.git
+git clone https://github.com/T2HASH/gooserelayVpN.git
 cd GooseRelayVPN
 go build -o goose-client ./cmd/client
 go build -o goose-server ./cmd/server
@@ -115,7 +108,7 @@ go build -o goose-server ./cmd/server
 If you prefer containers on your VPS, you can run `goose-server` directly from GHCR:
 
 ```bash
-docker pull ghcr.io/kianmhz/gooserelayvpn-server:latest
+docker pull ghcr.io/T2HASH/gooserelayVpN-server:latest
 ```
 
 ### Step 3: Generate a secret key
@@ -236,7 +229,7 @@ docker compose up -d
 The repo includes [`docker-compose.yml`](docker-compose.yml). By default it uses `ghcr.io/kianmhz/gooserelayvpn-server:latest`, and you can override it with:
 
 ```bash
-GOOSE_SERVER_IMAGE=ghcr.io/kianmhz/gooserelayvpn-server:vX.Y.Z docker compose up -d
+GOOSE_SERVER_IMAGE=ghcr.io/T2HASH/gooserelayVpN-server:vX.Y.Z docker compose up -d
 ```
 
 Verify from your own computer:
@@ -575,9 +568,7 @@ bash bench/bench.sh --update <ref>   # e.g. --update v1.3.0 or --update HEAD
 
 ---
 
-## Special Thanks
 
-Special thanks to [@abolix](https://github.com/abolix) for making this project possible.
 
 ## License
 
