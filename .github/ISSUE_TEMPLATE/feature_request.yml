@@ -1,0 +1,40 @@
+name: Feature Request / درخواست قابلیت
+description: Suggest a new feature or enhancement / پیشنهاد یک قابلیت یا بهبود
+title: "[Feature] "
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for the idea. Please describe the problem and how the feature should work.\n\nممنون از پیشنهاد شما. لطفا مشکل و نحوه عملکرد قابلیت را توضیح دهید."
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case / مورد استفاده
+      description: What specific problem does this feature solve? / این قابلیت دقیقا چه مشکلی را حل می‌کند؟
+      placeholder: "I need to ... because ... / نیاز دارم ... چون ..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_logic
+    attributes:
+      label: Proposed Logic / منطق پیشنهادی
+      description: How should the feature work from the user's perspective? / از دید کاربر باید چگونه کار کند؟
+      placeholder: "When I ..., the app should ... / وقتی من ...، برنامه باید ..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered / گزینه‌های جایگزین
+      description: Any current workarounds or alternatives? / چه راه‌حل‌های جایگزینی وجود دارد؟
+      placeholder: "I currently ... / در حال حاضر ..."
+    validations:
+      required: false
+  - type: textarea
+    id: visuals_mockups
+    attributes:
+      label: Visuals / Mockups / طرح‌ها یا دیاگرام‌ها
+      description: Optional sketches or diagrams (if UI is involved). / طرح یا دیاگرام اختیاری (اگر رابط کاربری درگیر است).
+    validations:
+      required: false

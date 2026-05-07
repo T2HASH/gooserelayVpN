@@ -1,0 +1,58 @@
+name: Bug Report / گزارش باگ
+description: Report a reproducible problem / گزارش یک مشکل قابل بازتولید
+title: "[Bug] "
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting a bug. Please fill out the fields below so we can reproduce and fix it.\n\nمتشکریم که باگ را گزارش می‌کنید. لطفا بخش‌های زیر را کامل کنید تا بتوانیم مشکل را بازتولید و رفع کنیم."
+  - type: textarea
+    id: problem_summary
+    attributes:
+      label: Problem Summary / خلاصه مشکل
+      description: A concise explanation of the bug. / توضیح کوتاه درباره باگ.
+      placeholder: "The client fails to connect when ... / کلاینت هنگام ... وصل نمی‌شود"
+    validations:
+      required: true
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Reproducible Steps / مراحل بازتولید
+      description: Numbered steps to trigger the issue. / مراحل شماره‌گذاری‌شده برای ایجاد مشکل.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment_details
+    attributes:
+      label: Environment Details / مشخصات محیط
+      description: OS, app version, hardware, network, or other specifics. / سیستم‌عامل، نسخه برنامه، سخت‌افزار، شبکه و موارد مشابه.
+      placeholder: |
+        - OS:
+        - App version:
+        - Hardware:
+        - Network:
+    validations:
+      required: true
+  - type: textarea
+    id: expected_vs_actual
+    attributes:
+      label: Expected vs. Actual / انتظار در برابر نتیجه واقعی
+      description: What you expected to happen and what actually happened. / آنچه انتظار داشتید و آنچه رخ داد.
+      placeholder: |
+        Expected:
+        Actual:
+    validations:
+      required: true
+  - type: textarea
+    id: logs_screenshots
+    attributes:
+      label: Logs / Screenshots / لاگ‌ها یا تصاویر
+      description: Paste terminal output or attach screenshots. / خروجی ترمینال را قرار دهید یا تصاویر را پیوست کنید.
+      render: shell
+    validations:
+      required: false

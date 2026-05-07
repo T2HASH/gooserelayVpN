@@ -1,0 +1,14 @@
+.git
+.github
+.gitignore
+.DS_Store
+**/.DS_Store
+bin
+dist
+tmp
+*.tmp
+*.swp
+*.swo
+bench/results
+README_FA.md
+*.log

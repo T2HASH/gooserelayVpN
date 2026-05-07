@@ -1,0 +1,35 @@
+# Local configs (use *_config.example.json as templates) — contain the AES key.
+client_config.json
+server_config.json
+
+# Built binaries
+/client
+/server
+/goose-client
+/goose-server
+/goose-server-linux
+/bin/
+/dist/
+/release/
+
+# Go build/test artifacts
+*.test
+*.out
+coverage.*
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+deploy.sh
+
+# Misc
+*.token
+*.log
+
+# Bench artifacts (baselines/ are committed; results/ are per-run)
+/bench/bin/
+/bench/results/*.json
+/bench/.head_bin/
+/bench/.worktrees/

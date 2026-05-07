@@ -1,0 +1,9 @@
+services:
+  goose-server:
+    image: ${GOOSE_SERVER_IMAGE:-ghcr.io/kianmhz/gooserelayvpn-server:latest}
+    container_name: goose-server
+    restart: unless-stopped
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./server_config.json:/app/server_config.json:ro

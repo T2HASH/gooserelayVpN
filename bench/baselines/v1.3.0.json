@@ -1,0 +1,58 @@
+{
+  "ref": "v1.3.0",
+  "commit": "61d24c8",
+  "go_version": "go1.26.2",
+  "host": {
+    "os": "darwin",
+    "arch": "arm64",
+    "ncpu": 8
+  },
+  "started_at": "2026-04-29T16:39:13Z",
+  "duration_ms": 62733,
+  "scenarios": {
+    "idle_overhead_15s": {
+      "client_cpu_max": 0.8,
+      "client_cpu_mean": 0.07,
+      "duration_ms": 15000,
+      "samples": 30,
+      "server_cpu_max": 1.9,
+      "server_cpu_mean": 0.06,
+      "sessions": 50
+    },
+    "sessions_per_sec": {
+      "duration_ms": 10231,
+      "fail": 0,
+      "ok": 29,
+      "per_sec": 2.83
+    },
+    "throughput_down_8MB_1session": {
+      "bytes": 8388608,
+      "duration_ms": 8084,
+      "mb_per_sec": 0.99
+    },
+    "throughput_up_1MB_1session": {
+      "bytes": 1048576,
+      "duration_ms": 364,
+      "mb_per_sec": 2.74
+    },
+    "throughput_up_8MB_1session": {
+      "bytes": 8388608,
+      "duration_ms": 1812,
+      "mb_per_sec": 4.41
+    },
+    "throughput_up_8MB_4sessions": {
+      "bytes_per_session": 8388608,
+      "duration_ms": 1926,
+      "mb_per_sec": 16.61,
+      "sessions": 4,
+      "total_bytes": 33554432
+    },
+    "ttfb_p50_p95": {
+      "mean_us": 504751,
+      "n": 50,
+      "p50_us": 351655,
+      "p95_us": 353071,
+      "p99_us": 353645
+    }
+  }
+}

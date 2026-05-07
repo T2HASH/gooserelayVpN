@@ -1,0 +1,117 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build ${{ matrix.goos }}/${{ matrix.goarch }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+          - goos: linux
+            goarch: arm64
+          - goos: linux
+            goarch: arm
+            goarm: 7
+          - goos: windows
+            goarch: amd64
+          - goos: windows
+            goarch: arm64
+          - goos: darwin
+            goarch: amd64
+          - goos: darwin
+            goarch: arm64
+          - goos: android
+            goarch: arm64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Build binaries
+        shell: bash
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          GOARM: ${{ matrix.goarm }}
+          CGO_ENABLED: '0'
+        run: |
+          set -euo pipefail
+          VERSION="${GITHUB_REF_NAME}"
+          PLATFORM="${GOOS}-${GOARCH}$( [ -n "${GOARM:-}" ] && echo "v${GOARM}" || true )"
+          SUFFIX=""
+          if [ "$GOOS" = "windows" ]; then SUFFIX=".exe"; fi
+          LDFLAGS="-s -w -X main.version=${VERSION}"
+
+          # --- client ---
+          CLIENT_NAME="GooseRelayVPN-client-${VERSION}-${PLATFORM}"
+          mkdir -p "dist/$CLIENT_NAME"
+          go build -trimpath -ldflags "$LDFLAGS" -o "dist/$CLIENT_NAME/goose-client${SUFFIX}" ./cmd/client
+          cp client_config.example.json "dist/$CLIENT_NAME/"
+
+          # --- server ---
+          if [ "$GOOS" != "android" ]; then
+            SERVER_NAME="GooseRelayVPN-server-${VERSION}-${PLATFORM}"
+            mkdir -p "dist/$SERVER_NAME"
+            go build -trimpath -ldflags "$LDFLAGS" -o "dist/$SERVER_NAME/goose-server${SUFFIX}" ./cmd/server
+            cp server_config.example.json "dist/$SERVER_NAME/"
+          fi
+
+          cd dist
+          if [ "$GOOS" = "windows" ]; then
+            zip -r "${CLIENT_NAME}.zip" "$CLIENT_NAME"
+            if [ "$GOOS" != "android" ]; then
+              zip -r "${SERVER_NAME}.zip" "$SERVER_NAME"
+            fi
+          else
+            tar -czf "${CLIENT_NAME}.tar.gz" "$CLIENT_NAME"
+            if [ "$GOOS" != "android" ]; then
+              tar -czf "${SERVER_NAME}.tar.gz" "$SERVER_NAME"
+            fi
+          fi
+          ls -lh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.goarm && format('v{0}', matrix.goarm) || '' }}
+          path: |
+            dist/GooseRelayVPN-*.tar.gz
+            dist/GooseRelayVPN-*.zip
+
+  release:
+    name: Publish release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Generate SHA256SUMS
+        run: |
+          cd dist
+          find . -maxdepth 1 -type f -name 'GooseRelayVPN-*' -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/GooseRelayVPN-*.tar.gz
+            dist/GooseRelayVPN-*.zip
+            dist/SHA256SUMS.txt
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

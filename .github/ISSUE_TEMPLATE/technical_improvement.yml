@@ -1,0 +1,31 @@
+name: Technical Improvement / Refactor / بهبود فنی یا بازآرایی
+description: Maintenance, performance, or refactoring work / نگه‌داری، عملکرد یا بازآرایی کد
+title: "[Tech] "
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Use this template for technical debt, refactors, or internal improvements.\n\nبرای بدهی فنی، بازآرایی یا بهبودهای داخلی از این فرم استفاده کنید."
+  - type: input
+    id: affected_module
+    attributes:
+      label: Affected Module / بخش تحت تاثیر
+      description: Which part of the codebase needs attention? / کدام بخش کد نیاز به توجه دارد؟
+      placeholder: "internal/..., cmd/..., client/..."
+    validations:
+      required: true
+  - type: textarea
+    id: reason_for_change
+    attributes:
+      label: Reason for Change / دلیل تغییر
+      description: Why is this change needed (performance, readability, security, etc.)? / چرا این تغییر لازم است (عملکرد، خوانایی، امنیت و غیره)؟
+    validations:
+      required: true
+  - type: textarea
+    id: suggested_approach
+    attributes:
+      label: Suggested Approach / رویکرد پیشنهادی
+      description: Technical notes or guidance for implementation. / نکات فنی یا راهنمای اجرا.
+    validations:
+      required: false
