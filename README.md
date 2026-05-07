@@ -5,10 +5,17 @@
   <a href="https://t.me/t2hashchannel">
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
   </a>
-  <a href="mailto:your-email@example.com">
+  <a href="mailto:oneQAZqaz@protonmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </div>
+
+### 🛠 Tech Stack
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=asm,cpp,linux,git,github,go,python&theme=dark" />
+  </a>
+</p>
 
 
 
