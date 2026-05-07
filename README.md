@@ -1,3 +1,20 @@
+<div align="center">
+  <h1> ⚡️ Hi, I'm T2HASH ⚡️ </h1>
+  <p>Low-Level Programming Enthusiast | Assembly & C/C++ | Networking & VPN Protocols</p>
+
+  <a href="https://t.me/t2hashchannel">
+    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
+  </a>
+  <a href="mailto:your-email@example.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</div>
+
+
+
+
+
+
 # GooseRelayVpN
 
 [![GitHub](https://github.com/T2HASH/gooserelayVpN)
