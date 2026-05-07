@@ -27,7 +27,7 @@
 
 
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=120&section=header&text=Learning%20Assembly%20x64&fontSize=30" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=120&section=header&text=Learning%20mETHOD%20x64&fontSize=30" width="100%" />
 
 
 
